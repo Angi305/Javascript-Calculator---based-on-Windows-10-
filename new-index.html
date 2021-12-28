@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="/new-css.css" />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+         />
+      <script
+         src="https://code.jquery.com/jquery-3.6.0.min.js"
+         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+         crossorigin="anonymous"></script>
+      <title>Calculator</title>
+   </head>
+   <body>
+      <div class="container">
+         <div class="calculator">
+            <header>
+               <div class="top">
+                  <h5 class="branding">Calculator</h5>
+                  <div class="controls">
+                     <div class="window">
+                        <div class="minimize button" role="button">
+                           <img
+                              class="icon icons8-Minus-Math-"
+                              src="https://img.icons8.com/material-outlined/24/ffffff/minus-math.png"
+                              width="10px"
+                              />
+                        </div>
+                        <div class="maximize button" role="button">
+                           <img
+                              class="icon icons8-Rectangle"
+                              src="https://img.icons8.com/small/16/ffffff/maximize-button.png"
+                              width="10px"
+                              />
+                        </div>
+                        <div class="close button" role="button">
+                           <img
+                              class="closebutton"
+                              src="https://img.icons8.com/material-rounded/24/ffffff/multiply--v1.png"
+                              width="15px"
+                              />
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="type">
+                  <div class="menu">
+                     <div class="calculator-menu button-top" role="button">
+                        <img
+                           class="icon icons8-Menu"
+                           src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iMjQiIGhlaWdodD0iMjQiCnZpZXdCb3g9IjAgMCAyNCAyNCIKc3R5bGU9IiBmaWxsOiNmZmZmZmY7Ij48cGF0aCBkPSJNIDMgNSBBIDEuMDAwMSAxLjAwMDEgMCAxIDAgMyA3IEwgMjEgNyBBIDEuMDAwMSAxLjAwMDEgMCAxIDAgMjEgNSBMIDMgNSB6IE0gMyAxMSBBIDEuMDAwMSAxLjAwMDEgMCAxIDAgMyAxMyBMIDIxIDEzIEEgMS4wMDAxIDEuMDAwMSAwIDEgMCAyMSAxMSBMIDMgMTEgeiBNIDMgMTcgQSAxLjAwMDEgMS4wMDAxIDAgMSAwIDMgMTkgTCAyMSAxOSBBIDEuMDAwMSAxLjAwMDEgMCAxIDAgMjEgMTcgTCAzIDE3IHoiPjwvcGF0aD48L3N2Zz4=" width="15px"/>
+                     </div>
+                     <span style="font-size: 15px; margin-left:10px; color: white">Standard</span>
+                  </div>
+                  <div class="history">
+                     <div class="button-top" role="button">
+                        <img
+                           class="icon icons8-Past"
+                           src="https://img.icons8.com/ios/50/ffffff/time-machine.png" width="15px"
+                           style= margin-top:10px;/>
+                     </div>
+                  </div>
+               </div>
+            </header>
+            <table style="border: 0px;">
+               <tr>
+                  <td class="left">
+                     <div>
+                        <input class="history-display" id="history-dis" type="text" value="" disabled="">
+                        <input type="text" class="display" id="main-display" disabled />
+                        <div class="keyboard">
+                           <div class="predefined-functions">
+                              <div class="functions-button" role="button">MC</div>
+                              <div class="functions-button" role="button">MR</div>
+                              <div class="functions-button" role="button" style="color: white;"><b>M+</b></div>
+                              <div class="functions-button" role="button"style="color: white;"><b>M-</b></div>
+                              <div class="functions-button" role="button"style="color: white;"><b>MS</b></div>
+                           </div>
+                           <div class="numpad">
+                              <table class="numpad-table" style="border: 1px solid rgb(49, 48, 48);">
+                                 <tr>
+                                    <td class="numpad-cell numpad-function" role="button" data-value="%">%</td>
+                                    <td class="numpad-cell numpad-function" role="button" data-value="CE">CE</td>
+                                    <td class="numpad-cell numpad-function" role="button" data-value="C">C</td>
+                                    <td class="numpad-cell numpad-function" role="button" data-value="">
+                                       <img id="clear-button"src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAAB8UlEQVRoge2Yv04CQRCH54yxM1QaiBpsbG2M4hP4ABZGHwFq8V00voBROymsfAaFxMZeK2OIUqmfBYMsx7+9Y/cU3a86dmdnf7/L7dxwIoFAIBAIBP4pQA6o8ztoApfAmohIlMDErIjURGTH141KybOIrFtHA8d6Jx6Boj9d1nqWgCvVdGa7qKoL3oBNzxqtAVZU14tN8C7wAXwC+xnoS0TnwIwL2gBeNfYwI22JGGsEKOp5ADjNUFsiRhoB5oFbjbkB5jLWZ81QI8AscK3zdSCXcoMysGgRtwiU0+yh64cambjMAhXjRgw1oyY6L9hKyr36jQBHOt4CttMk1jwLwJ3mugcKFjH5lHv1GnFdZkeZcWVCc3WN0Ftmq5OaGCG44NKE7tE2Qm+ZPXZlwtjIPAf12PXYYmCR/9tIQ6+vaTeGzomZcWZCcwMwExu37oZ/HbFH68RD/mweLf2R1WHPDyoAE+7RNaIDvstvfsRcajN9RnTQ1wuxr8S6MjPQiE50WpQnprVF0QmzaWwwrU2jTk5/G28ETP8fKyPIS1l2iZURDTTL8kEG2hJhbUSDO5+DWsCWZ23WkORzkLHILMurHvXZ6lkGaqrp/K98Mi3Fu9+hRFH0LiJ7ItLwJikZTRG5EJFSFEUPPy0mEAgEAoGAS74AJ71vwHl9ZEgAAAAASUVORK5CYII="
+                                          width="25%"/>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="numpad-cell numpad-function" id="inverse" data-value="inverse" style="width: 10px;">
+                                       <span class="num1">
+                                       <sup>1</sup>
+                                       </span>
+                                       <span>&frasl;</span>
+                                       <span class="x-sign">
+                                       <sub><em>x</em></sub>
+                                       </span>
+                                    </td>
+                                    <td class="numpad-cell numpad-function" id="pow" data-value="pow" style="width: 10px;">
+                                       <span class="x-num2">
+                                       <sub>x</sub>
+                                       </span>
+                                       <span>
+                                       <sup>2</sup>
+                                       </span>
+                                    </td>
+                                    <td class="numpad-cell numpad-function" id="sqrt" data-value="sqrt" style="width: 5px;">
+                                       <span class="x-num3">
+                                       <sup>2</sup>
+                                       <span>&#8730;</span>
+                                       <span>
+                                       <span>&#215;</span>
+                                       </span>
+                                    </td>
+                                    <td class="numpad-cell numpad-function" id="divide" data-value="/">
+                                       <img class="divide" src="https://img.icons8.com/ios-glyphs/30/ffffff/divide.png" width="15px">
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="numpad-cell numpad-number" role="button" data-value="7">7</td>
+                                    <td class="numpad-cell numpad-number" role="button" data-value="8">8</td>
+                                    <td class="numpad-cell numpad-number" role="button" data-value="9">9</td>
+                                    <td class="numpad-cell numpad-function" role="button" data-value="*">
+                                       <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAkUlEQVRIie2UQQ5AMBBFcQfC/U/CRlAbXTjOs9CEiNRMywZ/1aQz/01nJk2SX98U0AAGKASxBTACtQbQs8r6IM7cuthOA8iBySXOQCWIKcWAK0i0uQ9ym/kOsu+zPZwvlyDkJarKswhuGpG76dEWnQ1UssLB5p47HUSyilEQYJD0+TCfXgNo0X12BmjFgF/v0gIYhortbjCTugAAAABJRU5ErkJggg==" width="15px">
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="numpad-cell numpad-number" role="button" data-value="4">4</td>
+                                    <td class="numpad-cell numpad-number" role="button" data-value="5">5</td>
+                                    <td class="numpad-cell numpad-number" role="button" data-value="6">6</td>
+                                    <td class="numpad-cell numpad-function" role="button" data-value="-" style="font-size: 2rem;">-</td>
+                                 </tr>
+                                 <tr>
+                                    <td class="numpad-cell numpad-number" role="button" data-value="1">1</td>
+                                    <td class="numpad-cell numpad-number" role="button" data-value="2">2</td>
+                                    <td class="numpad-cell numpad-number" role="button" data-value="3">3</td>
+                                    <td class="numpad-cell numpad-function" role="button" data-value="+">+</td>
+                                 </tr>
+                                 <tr>
+                                    <td class="numpad-cell numpad-number" role="button" data-value="+-">
+                                       <img class="icon icons8-Plus-Minus" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAABk0lEQVRoge2Yy0oDQRBFq4Ki7lyovyD+gg/QXxDBB+jH6Sru3OjOrYL4DRHXotlJFDwuUoPSDGi/pkfpA2EYSKpvpW5P30SkUqlUKpWKaGkBwJyIbNnttap+lNQTDLDPlNuYOoNUgiI4tutZURUxAMvAm72WYmqVnsihiMyKyJWqPhXWEg5wZ/tjr7SWYIA1a2IMLMTW87aWLU7swvK1yYeq+pqgnh8pGgEUGFmpzVTafEWkaGTbyjwASQ7lUk+txlanqprCpv7ETgSYB16szGpKbb5CYhs5sBI3KXWVsFY/IknMRICVVJHEZaZlsV+J/Ol9qtr2NGoiyUVbJPH5gtz6XVurH7YSCbfWt0jybD+mktLlRJppnKvqpMN12wmZiBNJNnJp8yKwkR372ChVJHHpylrlI4mL70QskoyLRxKXgEayRBKXLqzVn7MjFIsk78AkdSRxyT2RI5nGoMu//i/Jve2P3dJagskdSVxyWuvErsNeRJIQgAHwaBNZ72LNLHHBYsii3Y57c5pXKpVKpfLf+QROzHArZDCaZwAAAABJRU5ErkJggg==" width="15px">
+                                    </td>
+                                    <td class="numpad-cell numpad-number" role="button" data-value="0">0</td>
+                                    <td class="numpad-cell numpad-number" role="button" data-value=".">.</td>
+                                    <td class="numpad-cell numpad-equals" role="button" data-value="=">=</td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </div>
+                     </div>
+                  </td>
+                  <td class="right" >
+                     <label class="tab-button ative-tab", id="show-history-tab" data-tab="history">History</label>
+                     <label class="tab-button" id="show-memory-tab" data-tab="memory">Memory</label>
+                     <textarea class="show-history-screen" id="show-history" type="textarea"  disabled readonly></textarea>
+                  </td>
+               </tr>
+            </table>
+         </div>
+      </div>
+      <script src="new-index.js"></script>
+   </body>
+</html>

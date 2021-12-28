@@ -1,0 +1,206 @@
+* {
+  font-family: "Quicksand", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.container {
+  margin-top: 10%;
+  margin-left: 30%;
+  min-height: 100vh;
+}
+
+.calculator {
+  background-color: #303030;
+  width: 60%;
+}
+
+.left {
+  width: 70%;
+}
+
+.right {
+  width: 30%;
+  vertical-align: top;
+  color: white;
+  font: "Quicksand", sans-serif;
+}
+
+.button.close:hover {
+  background: #f00;
+}
+
+.button {
+  width: 15%;
+  line-height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+}
+.branding {
+  flex-grow: 1;
+  cursor: default;
+  font-size: 0.8rem;
+  padding-left: 4%;
+  color: white;
+  display: inline;
+  width: 75%;
+}
+
+.window {
+  display: flex;
+  flex-grow: 1;
+}
+
+.controls {
+  width: 25%;
+  float: right;
+}
+
+.type {
+  display: flex;
+  margin: 2%;
+}
+
+.menu {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.history {
+  flex-grow: 6;
+  justify-content: flex-end;
+}
+
+.history-display {
+  width: 96%;
+  font-size: 0.5rem;
+  color: white;
+  background: #303030;
+  border: 0px;
+  text-align: right;
+}
+
+.display {
+  width: 96%;
+  font-size: 2rem;
+  color: white;
+  background: #303030;
+  border: 0px;
+  text-align: right;
+}
+
+.predefined-functions {
+  display: flex;
+  font-size: 1rem;
+  color: #757575;
+  width: 60%;
+}
+
+.functions-button {
+  width: 20%;
+  padding: 3%;
+  text-align: center;
+}
+
+.functions-button:hover {
+  background-color: white;
+  cursor: pointer;
+}
+
+.keyboard {
+  width: 100%;
+}
+
+.numpad {
+  width: 100%;
+}
+
+.numpad-table {
+  border: 1px solid darkgray;
+  width: 100%;
+}
+
+.numpad-cell {
+  width: 18.3%;
+  height: 50px;
+  cursor: pointer;
+  text-align: center;
+  font: "Quicksand", sans-serif;
+  color: white;
+}
+
+.numpad-cell:hover {
+  background-color: rgba(121, 135, 136, 0.445);
+}
+
+.numpad-number {
+  color: white;
+  background-color: black;
+}
+
+.numpad-function {
+  background-color: #1818188c;
+}
+
+.numpad-equals {
+  background-color: #134369;
+}
+
+.tab-button {
+  margin-right: 20px;
+  cursor: pointer;
+  padding-bottom: 5px;
+}
+
+.tab-button:hover {
+  color: rgb(190, 178, 178);
+  cursor: pointer;
+}
+
+.show-history-screen {
+  margin-top: 10%;
+  width: 94%;
+  height: 300px !important;
+  padding-top: 10%;
+  font-size: 0.8rem;
+  color: white;
+  /* background: #303030; */
+  background: #303030;
+  text-align: right;
+  border: 2px;
+  resize: none;
+}
+
+.active-tab {
+  border-bottom: 2px solid #0078d7;
+}
+@media only screen and (max-width: 1337px) and (min-width: 600px) {
+}
+@media only screen and (max-width: 600px) {
+  .button.close {
+    margin-left: 10px;
+  }
+  .keyboard {
+    width: 150px;
+  }
+  .predefined-functions {
+    width: 175px;
+  }
+  .show-history-screen {
+    width: 1px;
+    z-index: 1px;
+    position: relative;
+  }
+}
+@media only screen and (min-width: 768px) {
+}
